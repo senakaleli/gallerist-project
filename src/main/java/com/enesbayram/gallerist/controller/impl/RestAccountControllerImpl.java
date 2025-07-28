@@ -29,4 +29,11 @@ public class RestAccountControllerImpl extends RestBaseController implements IRe
         return ok(accountService.updateAccount(id, dtoAccountIU));
     }
 
+    @DeleteMapping("/delete/{id}")
+    @Override
+    public RootEntity<String> deleteAccount(@PathVariable Long id) {
+        accountService.deleteAccount(id);
+        return ok("Account başarıyla silindi. ID: " + id);
+    }
+
 }

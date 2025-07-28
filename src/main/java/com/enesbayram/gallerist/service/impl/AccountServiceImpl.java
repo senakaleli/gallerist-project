@@ -64,4 +64,14 @@ public class AccountServiceImpl implements IAccountService {
         return dtoAccount;
     }
 
+    @Override
+    public void deleteAccount(Long id) {
+        if (!accountRepository.existsById(id)) {
+            throw new BaseException(new ErrorMessage(id.toString(), MessageType.RECORD_NOT_FOUND_WITH_THIS_ID));
+        }
+
+        accountRepository.deleteById(id);
+    }
+
+
 }

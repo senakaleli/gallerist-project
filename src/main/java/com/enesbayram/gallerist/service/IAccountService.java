@@ -8,4 +8,6 @@ public interface IAccountService {
     public DtoAccount saveAccount(DtoAccountIU dtoAccountIU);
 
     public DtoAccount updateAccount(Long id, DtoAccountIU dtoAccountIU);
+
+    public void deleteAccount(Long id);
 }
